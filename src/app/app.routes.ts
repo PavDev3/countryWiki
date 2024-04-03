@@ -16,6 +16,13 @@ export const routes: Routes = [
       ),
   },
   {
+    path: 'contact',
+    loadComponent: () =>
+      import('./shared/pages/contact/contact-page.component').then(
+        (m) => m.ContactPageComponent
+      ),
+  },
+  {
     path: '',
     redirectTo: 'home',
     pathMatch: 'full',
