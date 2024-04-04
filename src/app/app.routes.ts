@@ -23,6 +23,13 @@ export const routes: Routes = [
       ),
   },
   {
+    path: 'countries',
+    loadChildren: () =>
+      import('./countries/services/countries.routes').then(
+        (m) => m.CountryRoutes
+      ),
+  },
+  {
     path: '',
     redirectTo: 'home',
     pathMatch: 'full',
