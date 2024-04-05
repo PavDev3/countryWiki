@@ -1,12 +1,11 @@
 import { Component } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-country-page',
   standalone: true,
-  imports: [],
+  imports: [RouterOutlet],
   templateUrl: './country-page.component.html',
-  styles: ``
+  styles: ``,
 })
-export class CountryPageComponent {
-
-}
+export class CountryPageComponent {}
