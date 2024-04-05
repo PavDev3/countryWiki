@@ -8,7 +8,6 @@ export const COUNTRIES_ROUTES: Routes = [
   {
     path: '',
     component: CountryPageComponent,
-
     children: [
       {
         path: 'by-capital',
@@ -28,7 +27,7 @@ export const COUNTRIES_ROUTES: Routes = [
       },
       {
         path: '',
-        redirectTo: 'by-country',
+        redirectTo: 'country',
         pathMatch: 'full',
       },
     ],
