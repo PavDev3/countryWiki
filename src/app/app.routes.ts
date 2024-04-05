@@ -29,13 +29,9 @@ export const routes: Routes = [
         (m) => m.COUNTRIES_ROUTES
       ),
   },
-  {
-    path: '',
-    redirectTo: 'home',
-    pathMatch: 'full',
-  },
+
   {
     path: '**',
-    redirectTo: 'home',
+    redirectTo: 'countries',
   },
 ];

@@ -1,12 +1,11 @@
 import { Component } from '@angular/core';
+import { SearchBoxComponent } from '../../../shared/components/searchBox/searchbox.component';
 
 @Component({
   selector: 'app-by-region-page',
   standalone: true,
-  imports: [],
   templateUrl: './by-region-page.component.html',
-  styles: ``
+  styles: ``,
+  imports: [SearchBoxComponent],
 })
-export class ByRegionPageComponent {
-
-}
+export class ByRegionPageComponent {}

@@ -1,12 +1,11 @@
 import { Component } from '@angular/core';
+import { SearchBoxComponent } from '../../../shared/components/searchBox/searchbox.component';
 
 @Component({
   selector: 'app-by-country-page',
   standalone: true,
-  imports: [],
   templateUrl: './by-country-page.component.html',
-  styles: ``
+  styles: ``,
+  imports: [SearchBoxComponent],
 })
-export class ByCountryPageComponent {
-
-}
+export class ByCountryPageComponent {}

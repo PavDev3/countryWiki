@@ -27,7 +27,7 @@ export const COUNTRIES_ROUTES: Routes = [
       },
       {
         path: '',
-        redirectTo: 'country',
+        redirectTo: 'by-capital',
         pathMatch: 'full',
       },
     ],
