@@ -5,6 +5,7 @@
 <div class="row">
   <div class="col">
     <shared-search-box
+      (onValue)="searchByCapital($event)"
       [placeholder]="'Insert a capital name'"
     ></shared-search-box>
   </div>

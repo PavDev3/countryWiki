@@ -8,4 +8,9 @@ import { SearchBoxComponent } from './../../../shared/components/searchBox/searc
   styles: ``,
   imports: [SearchBoxComponent],
 })
-export class ByCapitalPageComponent {}
+export class ByCapitalPageComponent {
+  searchByCapital(term: string) {
+    console.log({ term });
+  }
+  constructor() {}
+}

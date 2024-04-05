@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   standalone: true,
@@ -6,5 +6,10 @@ import { Component, Input } from '@angular/core';
   templateUrl: './searchBox.component.html',
 })
 export class SearchBoxComponent {
+  emitValue(value: string) {
+    this.onValue.emit(value);
+  }
   @Input() placeholder: string = '';
+
+  @Output() onValue = new EventEmitter<string>();
 }
