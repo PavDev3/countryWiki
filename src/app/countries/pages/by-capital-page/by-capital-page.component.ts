@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { SearchBoxComponent } from '../../../shared/components/searchBox/searchbox.component';
+import { SearchBoxComponent } from './../../../shared/components/searchBox/searchBox.component';
 
 @Component({
   selector: 'app-by-capital-page',
