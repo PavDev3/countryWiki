@@ -11,5 +11,11 @@
   </div>
 </div>
 <div class="row">
-  <div class="col">Tabla de resultado</div>
+  <div class="col">
+    @for (country of countries; track country) {
+    <ul>
+      <li>{{ country.name.nativeName.spa?.common }} - {{ country.capital }}</li>
+    </ul>
+    }
+  </div>
 </div>
