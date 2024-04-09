@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { SearchBoxComponent } from '../../../shared/components/searchBox/searchBox.component';
+import { CountryTableComponent } from '../../components/country-table/country-table.component';
 import { Country } from '../../interfaces/country.interface';
 import { CountriesService } from '../../services/countries.service';
 
@@ -8,7 +9,7 @@ import { CountriesService } from '../../services/countries.service';
   standalone: true,
   templateUrl: './by-capital-page.component.html',
   styles: ``,
-  imports: [SearchBoxComponent],
+  imports: [SearchBoxComponent, CountryTableComponent],
 })
 export class ByCapitalPageComponent {
   public countries: Country[] = [];

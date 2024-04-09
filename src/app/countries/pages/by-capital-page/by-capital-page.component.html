@@ -12,10 +12,7 @@
 </div>
 <div class="row">
   <div class="col">
-    @for (country of countries; track country) {
-    <ul>
-      <li>{{ country.name.nativeName.spa?.common }} - {{ country.capital }}</li>
-    </ul>
-    }
+    <hr />
+    <countries-table [countries]="countries"></countries-table>
   </div>
 </div>
