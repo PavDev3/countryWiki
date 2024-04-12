@@ -22,7 +22,7 @@ export const COUNTRIES_ROUTES: Routes = [
         component: ByRegionPageComponent,
       },
       {
-        path: 'country',
+        path: 'by/:id',
         component: CountryPageComponent,
       },
       {
