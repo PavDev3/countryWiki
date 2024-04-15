@@ -6,5 +6,9 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   selector: 'shared-sidebar',
   templateUrl: './sidebar.component.html',
   imports: [RouterLink, RouterLinkActive],
+  styles: `
+  .list-group-item {
+    cursor: pointer;
+    }`,
 })
 export class SidebarComponent {}
