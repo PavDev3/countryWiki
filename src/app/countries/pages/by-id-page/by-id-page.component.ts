@@ -1,16 +1,20 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { filter, switchMap } from 'rxjs';
-import { Country } from './../../interfaces/country.interface';
+import { Country, Languages } from './../../interfaces/country.interface';
 import { CountriesService } from './../../services/countries.service';
 
 @Component({
   standalone: true,
   selector: 'by-id-page',
+  imports: [CommonModule],
   templateUrl: './by-id-page.component.html',
 })
 export class ByIdPageComponent {
   public country?: Country;
+  public languagesList?: string;
+  public currenciesList?: string;
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -25,11 +29,28 @@ export class ByIdPageComponent {
         switchMap(({ id }) => this.countriesService.searchCountryByAlpha(id))
       )
       .subscribe((country) => {
-        if (!country) return this.router.navigateByUrl('');
-        // return (this.country = country);
-        return;
+        if (!country) {
+          this.router.navigateByUrl('');
+          return;
+        }
+
+        this.country = country;
+        this.languagesList = this.languagesObjectToArray(country.languages);
+        this.currenciesList = this.getCurrencyNames(
+          country.currencies as { [key: string]: { name: string } }
+        );
       });
   }
 
   searchCountry(code: string) {}
+
+  languagesObjectToArray(languages: Languages) {
+    return Object.values(languages).join(', ') || 'No languages';
+  }
+
+  getCurrencyNames(currencies: { [key: string]: { name: string } }) {
+    return Object.values(currencies)
+      .map((currency) => currency.name)
+      .join(', ');
+  }
 }
