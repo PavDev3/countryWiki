@@ -2,17 +2,20 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { filter, switchMap } from 'rxjs';
+import { SearchBoxComponent } from '../../../shared/components/searchBox/searchBox.component';
 import { Country, Languages } from './../../interfaces/country.interface';
 import { CountriesService } from './../../services/countries.service';
 
 @Component({
   standalone: true,
   selector: 'by-id-page',
-  imports: [CommonModule],
+  imports: [CommonModule, SearchBoxComponent],
+
   templateUrl: './by-id-page.component.html',
 })
 export class ByIdPageComponent {
   public country?: Country;
+
   public languagesList?: string;
   public currenciesList?: string;
 
@@ -41,8 +44,6 @@ export class ByIdPageComponent {
         );
       });
   }
-
-  searchCountry(code: string) {}
 
   languagesObjectToArray(languages: Languages) {
     return Object.values(languages).join(', ') || 'No languages';
