@@ -1,0 +1,17 @@
+@if (country) {
+<div>
+  <div class="row">
+    <div class="col-12">
+      <h2 class="text-center">
+        <strong>
+          {{ country.name.common }}
+        </strong>
+      </h2>
+    </div>
+  </div>
+</div>
+} @else {
+<div class="alert alert-info">
+  <p>Please wait a moment.</p>
+</div>
+}
