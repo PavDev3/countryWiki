@@ -1,8 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-
-import { SearchBoxComponent } from './shared/components/searchBox/searchBox.component';
 import { SidebarComponent } from './shared/components/sideBar/sidebar.component';
 
 @Component({
@@ -10,7 +8,7 @@ import { SidebarComponent } from './shared/components/sideBar/sidebar.component'
   standalone: true,
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
-  imports: [RouterOutlet, CommonModule, SidebarComponent, SearchBoxComponent],
+  imports: [RouterOutlet, CommonModule, SidebarComponent],
 })
 export class AppComponent {
   title = 'countryWiki';
