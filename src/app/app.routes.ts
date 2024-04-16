@@ -8,20 +8,7 @@ export const routes: Routes = [
         (m) => m.HomePageComponent
       ),
   },
-  {
-    path: 'about',
-    loadComponent: () =>
-      import('./shared/pages/about/about-page.component').then(
-        (m) => m.AboutPageComponent
-      ),
-  },
-  {
-    path: 'contact',
-    loadComponent: () =>
-      import('./shared/pages/contact/contact-page.component').then(
-        (m) => m.ContactPageComponent
-      ),
-  },
+
   {
     path: 'countries',
     loadChildren: () =>
