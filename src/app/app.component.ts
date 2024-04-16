@@ -1,6 +1,6 @@
-import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+
+import { CountryPageComponent } from './countries/pages/country-page/country-page.component';
 import { SidebarComponent } from './shared/components/sideBar/sidebar.component';
 
 @Component({
@@ -8,7 +8,7 @@ import { SidebarComponent } from './shared/components/sideBar/sidebar.component'
   standalone: true,
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
-  imports: [RouterOutlet, CommonModule, SidebarComponent],
+  imports: [SidebarComponent, CountryPageComponent],
 })
 export class AppComponent {
   title = 'countryWiki';
