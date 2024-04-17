@@ -4,6 +4,7 @@ export const routes: Routes = [
   {
     path: '',
     redirectTo: 'countries',
+    pathMatch: 'full',
   },
   {
     path: 'countries',
