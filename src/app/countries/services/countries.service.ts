@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
-import { Observable, catchError, delay, map, of } from 'rxjs';
+import { Observable, catchError, map, of } from 'rxjs';
 import { Country } from './../interfaces/country.interface';
 
 @Injectable({ providedIn: 'root' })
@@ -11,10 +11,7 @@ export class CountriesService {
   constructor() {}
 
   private getCountriesRequest(url: string): Observable<Country[]> {
-    return this.http.get<Country[]>(url).pipe(
-      delay(2000),
-      catchError((error) => of([]))
-    );
+    return this.http.get<Country[]>(url).pipe(catchError((error) => of([])));
   }
 
   searchCountryByAlpha(code: string): Observable<Country | null> {

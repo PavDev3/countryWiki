@@ -3,11 +3,17 @@
 <hr />
 
 <div class="row">
-  <div class="col">
-    <shared-search-box
-      (onValue)="searchByRegion($event)"
-      [placeholder]="'Insert a region name'"
-    ></shared-search-box>
+  <div class="col text-center">
+    @for (region of regions; track region){
+    <button
+      class="btn mx-2"
+      [class.btn-primary]="region === selectedRegion"
+      (click)="searchByRegion(region)"
+    >
+      {{ region | titlecase }}
+    </button>
+
+    }
   </div>
 </div>
 <div class="row">

@@ -5,6 +5,7 @@
         "devkit",
         "fifa",
         "gini",
-        "latlng"
+        "latlng",
+        "titlecase"
     ]
 }
