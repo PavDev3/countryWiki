@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
+import { SidebarComponent } from './countries/components/sideBar/sidebar.component';
 import { CountryPageComponent } from './countries/pages/country-page/country-page.component';
-import { SidebarComponent } from './shared/components/sideBar/sidebar.component';
 
 @Component({
   selector: 'app-root',
