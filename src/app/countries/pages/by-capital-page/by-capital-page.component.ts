@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { LoadingSpinnerComponent } from '../../../shared/components/loadingSpinner/loadingSpinner.component';
 import { SearchBoxComponent } from '../../../shared/components/searchBox/searchBox.component';
 import { CountryTableComponent } from '../../components/country-table/country-table.component';
@@ -12,11 +12,16 @@ import { CountriesService } from '../../services/countries.service';
   styles: ``,
   imports: [SearchBoxComponent, CountryTableComponent, LoadingSpinnerComponent],
 })
-export class ByCapitalPageComponent {
+export class ByCapitalPageComponent implements OnInit {
   public countries: Country[] = [];
   public isLoading: boolean = false;
+  public initialValue: string = '';
 
   constructor(private countriesService: CountriesService) {}
+  ngOnInit(): void {
+    this.countries = this.countriesService.casheStore.byCapital.countries;
+    this.initialValue = this.countriesService.casheStore.byCapital.term;
+  }
   searchByCapital(term: string) {
     this.isLoading = true;
 

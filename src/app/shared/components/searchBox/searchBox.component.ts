@@ -23,6 +23,7 @@ export class SearchBoxComponent implements OnInit {
     this.onValue.emit(value);
   }
   @Input() placeholder: string = '';
+  @Input() initialValue: string = '';
 
   @Output() onValue = new EventEmitter<string>();
   @Output() onDebounce = new EventEmitter<string>();
